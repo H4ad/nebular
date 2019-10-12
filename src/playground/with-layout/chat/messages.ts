@@ -81,5 +81,5 @@ export const messages = [
       name: 'John Doe',
       avatar: '',
     },
-  },
+  }
 ];

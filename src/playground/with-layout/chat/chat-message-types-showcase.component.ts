@@ -63,6 +63,12 @@ import { Component } from '@angular/core';
          ]"
         avatar="https://i.gifer.com/no.gif">
       </nb-chat-message>
+      <nb-chat-message
+        type="custom"
+        disabledAvatar="true"
+        sender="Bot">
+        <p>This is a custom message</p>
+      </nb-chat-message>
     </nb-chat>
   `,
   styles: [`

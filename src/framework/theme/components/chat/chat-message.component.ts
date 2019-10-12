@@ -56,7 +56,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 @Component({
   selector: 'nb-chat-message',
   template: `
-    <div class="avatar" [style.background-image]="avatarStyle" *ngIf="!reply">
+    <div class="avatar" [style.background-image]="avatarStyle" *ngIf="!reply && !disabledAvatar">
       <ng-container *ngIf="!avatarStyle">
         {{ getInitials() }}
       </ng-container>
@@ -76,6 +76,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
                               [sender]="sender" [date]="date"
                               [message]="message" [latitude]="latitude" [longitude]="longitude">
         </nb-chat-message-map>
+        
+        <ng-content *ngSwitchCase="'custom'"></ng-content>
 
         <nb-chat-message-text *ngSwitchDefault
                               [sender]="sender" [date]="date" [message]="message">
@@ -166,6 +168,11 @@ export class NbChatMessageComponent {
    * @type {number}
    */
   @Input() longitude: number;
+
+  /**
+   * Disable the avatar image
+   */
+  @Input() disabledAvatar: boolean = false;
 
   /**
    * Message send avatar

@@ -72,7 +72,7 @@ import { NbComponentStatus } from '../component-status';
              [(ngModel)]="message"
              [class.with-button]="showButton"
              type="text"
-             placeholder="{{ fileOver ? 'Drop file to send' : 'Type a message' }}"
+             placeholder="{{ fileOver ? placeholder.fileOver : placeholder.typeMessage }}"
              (keyup.enter)="sendMessage()">
       <button nbButton
               [status]="status || 'primary'"
@@ -125,6 +125,15 @@ export class NbChatFormComponent {
    * @type {boolean}
    */
   @Input() dropFiles: boolean = false;
+
+  /**
+   * Placeholder text for input
+   * @type { typeMessage: string; fileOver: string }
+   */
+  @Input() placeholder: { typeMessage: string; fileOver: string } = {
+    fileOver: 'Drop file to send',
+    typeMessage: 'Type a message',
+  };
 
   /**
    *
