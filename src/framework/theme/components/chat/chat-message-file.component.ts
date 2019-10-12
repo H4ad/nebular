@@ -77,7 +77,6 @@ export class NbChatMessageFileComponent {
   constructor(protected cd: ChangeDetectorRef, protected domSanitizer: DomSanitizer) {
   }
 
-
   isImage(file: any): boolean {
     return ['image/png', 'image/jpeg', 'image/gif'].includes(file.type);
   }
