@@ -1,6 +1,6 @@
 {
   "name": "@h4ad/custom-nebular-theme",
-  "version": "4.4.0-rc1",
+  "version": "4.4.0-rc2",
   "description": "This is basically akevo's nebular theme but I made some changes in the chat component",
   "author": "akveo",
   "license": "MIT",

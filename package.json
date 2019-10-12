@@ -66,6 +66,7 @@
     "release:validate": "npm-run-all release:prepare build:wp ci:lint e2e:wp && npm run test:wp -- --watch=false",
     "release:dev": "npm-run-all release:prepare:dev publish",
     "release": "npm-run-all release:validate publish",
+    "release:h4ad": "npm run release:prepare && npm publish --access public src/.lib/theme",
     "publish": "./scripts/publish.sh",
     "update-packages-smoke-lock": "./scripts/update-packages-smoke-lock.sh",
     "cli:firefox-fix": "rimraf node_modules/@angular-devkit/build-angular/node_modules/uglify-es && rimraf node_modules/@angular-devkit/build-angular/node_modules/uglifyjs-webpack-plugin",
